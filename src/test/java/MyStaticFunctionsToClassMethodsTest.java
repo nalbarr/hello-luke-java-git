@@ -1,8 +1,7 @@
-package fall2017;
-
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import org.junit.Test;
+import org.junit.Assert;
 import static org.junit.Assert.*;
 
 public class MyStaticFunctionsToClassMethodsTest {
@@ -14,15 +13,16 @@ public class MyStaticFunctionsToClassMethodsTest {
 
     @Test 
     public void iterateScalars1DWithIndexes() {
-        expected int[] = new int[] {1, 2, 3, 4, 5};
-        actual = _fixture.iterateScalars1DWithIndexes();
-        assertEquals(expected, actual);
+        int[] expected = new int[] {0, 1, 2, 3, 4};
+        int[] actual = _fixture.iterateScalars1DWithIndexes();
+        //assertEquals(expected, actual);
+        Assert.assertArrayEquals(expected, actual);
     }
 
     @Test
     public void iterateScalars1DWithCollections() {
-        expected List = Arrays.asList(1, 2, 3, 4, 5);
-        actual = _fixture.iterateScalars1DWithCollections();
+        List<Integer> expected = Arrays.asList(1, 2, 3, 4, 5);
+        List<Integer> actual = _fixture.iterateScalars1DWithCollections();
         assertTrue(actual.containsAll(expected));
     }
 }
