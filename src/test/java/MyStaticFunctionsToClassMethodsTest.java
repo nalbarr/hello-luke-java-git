@@ -41,15 +41,24 @@ public class MyStaticFunctionsToClassMethodsTest {
         assertFalse(f1.equals(f2));
 
         // reassign and compare again
+        Foo f1save = f1;
         f1 = f2;
         System.out.println("After: ");
         System.out.println("  f1: " + f1);
         System.out.println("  f2: " + f2);
-
         assertTrue(f1 == f2);
         assertTrue(f1.equals(f2));
 
-        assert(true);
+        // mutate f2
+        f2.setName("foo2 modified");
+        System.out.println("After 2: ");
+        System.out.println("  f1: " + f1);
+        System.out.println("  f1save: " + f1save);
+        System.out.println("  f2: " + f2);
+        assertTrue(f1 == f2);
+        assertTrue(f1.equals(f2));
+        assertFalse(f1 == f1save);
+        assertFalse(f1.equals(f1save));
     }
 
     @Test
@@ -61,25 +70,22 @@ public class MyStaticFunctionsToClassMethodsTest {
         System.out.println("  f1: " + f1);
         System.out.println("  f2: " + f2);
 
+        // compare
+        assertFalse(f1 == f2);
+        assertFalse(f1.equals(f2));
+
+        // clone, reassign and compare again
         try {
             f2 = (Foo) f1.clone();
         } catch (CloneNotSupportedException e) {
             System.err.println("Caught exception: " + e);
         }
 
-        // compare
-        assertFalse(f1 == f2);
-        assertFalse(f1.equals(f2));
-
-        // reassign and compare again
-        f1 = f2;
         System.out.println("After: ");
         System.out.println("  f1: " + f1);
         System.out.println("  f2: " + f2);
 
-        assertTrue(f1 == f2);
+        assertFalse(f1 == f2);
         assertTrue(f1.equals(f2));
-
-        assert(true);
     }
 }

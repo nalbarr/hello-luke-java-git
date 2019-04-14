@@ -49,8 +49,12 @@ public class Foo implements Cloneable {
     }    
 
     public Object clone() throws CloneNotSupportedException {
+        // NLA.  This create a shallow copy.
         Foo clonedObj = (Foo) super.clone();
-        clonedObj._name = new String(this.getName());
+        // NLA.   Remaining deep copy, you have to do manually.
+        clonedObj._name = _name;
+        clonedObj._speed = _speed;
+
         return clonedObj;
     }
     
