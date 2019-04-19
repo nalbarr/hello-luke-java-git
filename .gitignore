@@ -1,21 +1,3 @@
-Skip to content
-This repository
-Search
-Pull requests
-Issues
-Marketplace
-Explore
- @nalbarr
- Sign out
- Watch 5
-  Star 2  Fork 7 LoyolaChicagoCode/hello-java
- Code  Issues 0  Pull requests 0  Projects 0  Wiki  Insights
-Branch: master Find file Copy pathhello-java/.gitignore
-6ecf375  on Aug 26, 2015
-@klaeufer klaeufer updated gradle wrapper
-2 contributors @klaeufer @ares09x
-RawBlameHistory     
-37 lines (28 sloc)  342 Bytes
 # built application files
 *.apk
 *.ap_
@@ -53,15 +35,3 @@ local.properties
 
 # Mac files
 *.DS_Store
-© 2017 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Help
-Contact GitHub
-API
-Training
-Shop
-Blog
-About
